@@ -2,6 +2,9 @@
 
 forge "https://forgeapi.puppetlabs.com"
 
+mod 'puppetlabs-ntp'
+    :git => 'git://github.com/puppetlabs/puppetlabs-ntp.git'
+    
 mod 'puppet-nginx', '3.2.0'
 mod 'puppetlabs-apache', '1.11.0'
 mod 'puppetlabs-mysql', '3.10.0'
