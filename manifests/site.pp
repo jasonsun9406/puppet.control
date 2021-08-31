@@ -1,3 +1,3 @@
 node /agent/ {
-	include nginx
+	include role::lamp
 }
