@@ -1,3 +1,3 @@
 class role::lamp::default {
-    include profile::lamp
+    include profile::lamp::default
 }
