@@ -1,4 +1,4 @@
-class profile::lamp::default {
+class profile::lamp {
     include apache
     include mysql::server
 }
