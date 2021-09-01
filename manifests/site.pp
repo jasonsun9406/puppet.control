@@ -1,3 +1,3 @@
 node /agent/ {
-	include role::lamp
+	include role::lamp::default
 }
