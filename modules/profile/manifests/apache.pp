@@ -2,5 +2,5 @@ class profile::apache {
   class { 'apache':
   }
 
-  apache::listen {'88':}
+  apache::listen {'80':}
 }
