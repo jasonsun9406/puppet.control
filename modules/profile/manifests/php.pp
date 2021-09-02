@@ -1,6 +1,6 @@
 class profile::php {
   class { '::php':
-    ensure       => latest,
+    ensure       => absent,
     manage_repos => true,
     fpm          => true,
     dev          => true,
