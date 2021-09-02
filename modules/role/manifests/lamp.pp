@@ -1,3 +1,3 @@
 class role::lamp {
-    include profile::apache2
+    include profile::apache
 }
