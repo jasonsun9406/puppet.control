@@ -1,4 +1,5 @@
 class profile::apache {
-  class { 'apache':
-  }
+  class { 'apache': }
+
+  apache::listen {'88':}
 }
