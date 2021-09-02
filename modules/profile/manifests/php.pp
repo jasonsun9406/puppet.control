@@ -8,5 +8,5 @@ class profile::php {
     pear         => true,
     phpunit      => false,
   }
-  
+
 }
