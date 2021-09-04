@@ -6,7 +6,7 @@ mod 'puppetlabs-stdlib', '8.0.0'
 mod 'puppetlabs-apt', '8.2.0'
 mod 'puppet-archive', '6.0.1'
 mod 'custom-apache',
-    :git => 'https://github.com/jasonsun9406/puppet.module.apache.git'
+    :git => 'https://github.com/jasonsun9406/puppet.module.custom_apache.git'
 
 mod 'puppetlabs-ntp', '9.1.0'
 
