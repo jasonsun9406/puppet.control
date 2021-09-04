@@ -1,5 +1,5 @@
 class role::lamp {
-    include customapache::install
+    include apache::install
     #include profile::apache
     include profile::php
     #include profile::mysql
