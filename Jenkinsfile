@@ -26,7 +26,10 @@ pipeline {
     }
     stages {
         stage{
-            checkout scm
+            steps{
+                checkout scm
+            }
+
         }
         stage('Applying r10k'){
 
