@@ -35,7 +35,7 @@ pipeline {
 
             steps{
                 script{
-                    sh 'sudo r10k deploy environment production --puppetfile -c /etc/puppetlabs/puppet/r10k.yaml --verbose'
+                    sh 'sudo r10k deploy environment ${ENVIRONMENT} --puppetfile -c /etc/puppetlabs/puppet/r10k.yaml --verbose'
                 }
             }
 
