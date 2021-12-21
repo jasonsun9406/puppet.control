@@ -35,9 +35,7 @@ pipeline {
 
             steps{
                 script{
-                    dir(path: "/etc/puppetlabs/puppet"){
-                        sh 'ls'
-                    }
+                    sh 'sudo r10k deploy environment production --puppetfile -c /etc/puppetlabs/puppet/r10k.yaml --verbose'
                 }
             }
 
