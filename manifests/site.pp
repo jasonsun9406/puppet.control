@@ -1,8 +1,4 @@
-node /agent/ {
-	include role::lamp
-}
-
-node /puppetclient/ {
+node 'ansible-agent01' {
 	include role::lamp
 }
 

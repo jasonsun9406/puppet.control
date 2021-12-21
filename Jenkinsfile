@@ -18,8 +18,8 @@ pipeline {
             name: 'ENVIRONMENT',
             choices: [
                 'dev',
-                'stg',
-                'prod'
+                'staging',
+                'production'
             ],
             description: ''
         )
