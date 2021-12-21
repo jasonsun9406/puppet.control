@@ -28,7 +28,7 @@ pipeline {
 
             steps{
                 script{
-                    hostname
+                    sh 'hostname'
                 }
 
 
