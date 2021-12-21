@@ -1,5 +1,9 @@
 pipeline {
-    agent master
+    agent {
+        node {
+            label 'master'
+        }
+    }
 
     options {
         skipDefaultCheckout()
@@ -28,11 +32,10 @@ pipeline {
 
             steps{
                 script{
-                    sh 'hostname'
+                    dir(path: "/etc/puppetlabs/puppet"){
+                        sh 'ls'
+                    }
                 }
-
-
-
             }
 
         }
