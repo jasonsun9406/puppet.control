@@ -6,7 +6,7 @@ node 'win-9kfma7hmroh' {
 
   exec { 'Check-Service':
     command   => '',
-    onlyif    => 'if (!(Get-Service -Name newrelic-infra -ErrorAction SilentlyContinue)){exit 1}',
+    onlyif    => 'if (!(Get-Service -Name puppet -ErrorAction SilentlyContinue)){exit 1}',
     provider  => powershell,
     logoutput => true,
     notify    => Dsc['stop-newrelicservice']
