@@ -21,8 +21,7 @@ node 'win-9kfma7hmroh' {
       startupType   => 'Disabled',
       state         => 'Stopped',
     },
-    subscribe   => Exec['Check-Service'],
-    refreshonly => true,
+    subscribe   => Exec['Check-Service']
 
   }
 }
