@@ -9,7 +9,7 @@ node 'win-9kfma7hmroh' {
     onlyif    => 'if (!(Get-Service -Name newrelic-infra -ErrorAction SilentlyContinue)){exit 1}',
     provider  => powershell,
     logoutput => true,
-    before    => DSC['stop-newrelicservice']
+    notify    => Dsc['stop-newrelicservice']
   }
 
   dsc {'stop-newrelicservice':
@@ -20,6 +20,9 @@ node 'win-9kfma7hmroh' {
       ensure          => 'present',
       startupType   => 'Disabled',
       state         => 'Stopped',
-    }
+    },
+    subscribe   => Exec['Check-Service'],
+    refreshonly => true,
+
   }
 }
