@@ -1,1 +1,19 @@
+
 ---
+nginx::nginx_upstreams:
+  'TESTFARM1':
+    ensure: present
+    members:
+      '192.168.1.206:':
+        server: '192.168.1.206:'
+        port: 30005
+
+nginx::nginx_servers:
+  test:
+    listen_port: 80
+
+nginx::nginx_locations:
+  test:
+    location: '/test'
+    server: test
+    proxy: http://TESTFARM1
