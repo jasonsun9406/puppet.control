@@ -8,7 +8,7 @@ mod 'puppet-archive', '6.0.1'
 mod 'toolr-customapache',
     :git => 'https://github.com/jasonsun9406/puppet.module.custom_apache.git'
 mod 'toolr-linux_mgmt'
-    :git => 'https://github.com/jasonsun9406/puppet.module.git'
+    :git => 'https://github.com/jasonsun9406/puppet.module.git',
     :branch => linux_mgmt
 
 mod 'puppetlabs-ntp', '9.1.0'
