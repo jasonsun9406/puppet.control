@@ -26,5 +26,5 @@ nginx::nginx_locations:
     proxy: http://TESTFARM1
   jenkins:
     location: '~* /'
-    server: jenkins
+    server: jenkins.toolr.ca
     proxy: https://JENKINS
