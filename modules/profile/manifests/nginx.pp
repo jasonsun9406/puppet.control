@@ -1,4 +1,4 @@
 # Install nginx
-class profile::apptier::nginx {
+class profile::nginx {
   class{ 'nginx': }
 }
