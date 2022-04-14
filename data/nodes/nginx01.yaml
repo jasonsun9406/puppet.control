@@ -1,4 +1,3 @@
-
 ---
 nginx::nginx_upstreams:
   'TESTFARM1':
@@ -7,13 +6,25 @@ nginx::nginx_upstreams:
       '192.168.1.206:30005':
         server: '192.168.1.206'
         port: 30005
+  'JENKINS':
+    ensure: present
+    members:
+      '192.168.1.201:8080':
+        server: '192.168.1.201'
+        port: 8080
 
 nginx::nginx_servers:
   '*.k8s.toolr.ca':
     listen_port: 80
+  jenkins:
+    listen_port: 443
 
 nginx::nginx_locations:
   hello-world-one:
     location: '~* /'
     server: '*.k8s.toolr.ca'
     proxy: http://TESTFARM1
+  jenkins:
+    location: '~* /'
+    server: jenkins
+    proxy: https://JENKINS
