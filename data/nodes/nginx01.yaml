@@ -13,7 +13,7 @@ nginx::nginx_servers:
     listen_port: 80
 
 nginx::nginx_locations:
-  test:
-    location: '/test'
+  hello-world-one:
+    location: '/test/'
     server: k8s.toolr.ca
     proxy: http://TESTFARM1
