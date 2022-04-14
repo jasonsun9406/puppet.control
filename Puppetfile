@@ -5,14 +5,7 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'puppetlabs-stdlib', '6.6.0'
 mod 'puppetlabs-apt', '8.2.0'
 mod 'puppet-archive', '6.0.1'
-mod 'toolr-customapache',
-    :git => 'https://github.com/jasonsun9406/puppet.module.custom_apache.git'
-mod 'toolr-linux_mgmt',
-    :git => 'https://github.com/jasonsun9406/puppet.module.git',
-    :branch => 'linux_mgmt'
-
 mod 'puppetlabs-ntp', '9.1.0'
-
 mod 'puppet-nginx', '3.2.0'
 mod 'puppetlabs-apache', '6.5.1'
 mod 'puppetlabs-mysql', '12.0.1'
@@ -24,3 +17,12 @@ mod 'saz-sudo', '7.0.2'
 mod 'saz-timezone', '6.1.0'
 mod 'stm-debconf', '3.3.1'
 mod 'walkamongus-realmd', '2.4.0'
+mod 'puppet-nginx', '3.3.0'
+
+
+
+mod 'toolr-customapache',
+    :git => 'https://github.com/jasonsun9406/puppet.module.custom_apache.git'
+mod 'toolr-linux_mgmt',
+    :git => 'https://github.com/jasonsun9406/puppet.module.git',
+    :branch => 'linux_mgmt'
