@@ -1,3 +1,3 @@
-class role::apptier::nginx {
+class role::nginx {
   include profile::nginx
 }

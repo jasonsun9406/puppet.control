@@ -8,4 +8,5 @@ node 'win-9kfma7hmroh' {
 
 node 'nginx01' {
   include linux_mgmt
+  include role::nginx
 }
