@@ -16,7 +16,7 @@ nginx::nginx_upstreams:
 nginx::nginx_servers:
   '*.k8s.toolr.ca':
     listen_port: 80
-  jenkins:
+  jenkins.toolr.ca:
     listen_port: 443
 
 nginx::nginx_locations:
