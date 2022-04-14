@@ -2,7 +2,7 @@
 
 forge "https://forgeapi.puppetlabs.com"
 
-mod 'puppetlabs-stdlib', '8.0.0'
+mod 'puppetlabs-stdlib', '6.6.0'
 mod 'puppetlabs-apt', '8.2.0'
 mod 'puppet-archive', '6.0.1'
 mod 'toolr-customapache',
@@ -21,3 +21,5 @@ mod 'puppetlabs-concat', '7.1.1'
 mod 'puppetlabs-powershell', '2.2.0'
 mod 'puppetlabs-dsc_lite', '1.1.0'
 mod 'saz-sudo', '7.0.2'
+mod 'saz-timezone', '6.1.0'
+mod 'stm-debconf', '3.3.1'
