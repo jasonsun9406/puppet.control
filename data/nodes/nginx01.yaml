@@ -9,11 +9,11 @@ nginx::nginx_upstreams:
         port: 30005
 
 nginx::nginx_servers:
-  test:
+  k8s.toolr.ca:
     listen_port: 80
 
 nginx::nginx_locations:
   test:
     location: '/test'
-    server: test
+    server: k8s.toolr.ca
     proxy: http://TESTFARM1
