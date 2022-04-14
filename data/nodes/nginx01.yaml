@@ -9,11 +9,11 @@ nginx::nginx_upstreams:
         port: 30005
 
 nginx::nginx_servers:
-  k8s.toolr.ca:
+  '*.k8s.toolr.ca':
     listen_port: 80
 
 nginx::nginx_locations:
   hello-world-one:
     location: '~* /'
-    server: k8s.toolr.ca
+    server: '*.k8s.toolr.ca'
     proxy: http://TESTFARM1
