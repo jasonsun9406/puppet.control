@@ -14,6 +14,6 @@ nginx::nginx_servers:
 
 nginx::nginx_locations:
   hello-world-one:
-    location: '/test/'
+    location: '~* /'
     server: k8s.toolr.ca
     proxy: http://TESTFARM1
