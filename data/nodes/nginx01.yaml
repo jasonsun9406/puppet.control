@@ -5,7 +5,7 @@ nginx::nginx_upstreams:
     ensure: present
     members:
       '192.168.1.206:30005':
-        server: '192.168.1.206:'
+        server: '192.168.1.206'
         port: 30005
 
 nginx::nginx_servers:
