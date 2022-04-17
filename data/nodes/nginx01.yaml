@@ -14,6 +14,8 @@ nginx::nginx_upstreams:
         port: 8080
 
 nginx::nginx_servers:
+  'toolr.ca':
+    listen_port: 80
   '*.k8s.toolr.ca':
     listen_port: 80
   jenkins.toolr.ca:
@@ -28,3 +30,7 @@ nginx::nginx_locations:
     location: '~* /'
     server: jenkins.toolr.ca
     proxy: http://JENKINS
+  toolr:
+    location: '~* /'
+    server: toolr.ca
+    proxy: http://TESTFARM1
