@@ -47,4 +47,4 @@ nginx::nginx_locations:
     server: nginx01.toolr.ca
     proxy: http://NGINX
     location_cfg_append:
-      stub_status: ''
+      return: '200 "healthy"'
