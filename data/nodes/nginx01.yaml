@@ -12,6 +12,12 @@ nginx::nginx_upstreams:
       '192.168.1.201:8080':
         server: '192.168.1.201'
         port: 8080
+  'NGINX':
+    ensure: present
+    members:
+      '127.0.0.1:80':
+        server: '127.0.0.1'
+        port: 80
 
 nginx::nginx_servers:
   'toolr.ca':
@@ -20,7 +26,7 @@ nginx::nginx_servers:
     listen_port: 80
   jenkins.toolr.ca:
     listen_port: 80
-  default_server:
+  nginx01.toolr.ca:
     listen_port: 80
 
 nginx::nginx_locations:
@@ -38,4 +44,5 @@ nginx::nginx_locations:
     proxy: http://TESTFARM1
   nginx_ping:
     location: '/health'
-    server: default_server
+    server: nginx01.toolr.ca
+    proxy: http://NGINX
