@@ -20,6 +20,8 @@ nginx::nginx_servers:
     listen_port: 80
   jenkins.toolr.ca:
     listen_port: 80
+  default_server:
+    listen_port: 80
 
 nginx::nginx_locations:
   hello-world-one:
@@ -34,3 +36,6 @@ nginx::nginx_locations:
     location: '~* /'
     server: toolr.ca
     proxy: http://TESTFARM1
+  nginx_ping:
+    location: '/health'
+    server: default_server
