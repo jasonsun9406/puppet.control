@@ -15,8 +15,8 @@ nginx::nginx_upstreams:
   'NGINX':
     ensure: present
     members:
-      '127.0.0.1:80':
-        server: '127.0.0.1'
+      'localhost:80':
+        server: 'localhost'
         port: 80
 
 nginx::nginx_servers:
@@ -43,6 +43,8 @@ nginx::nginx_locations:
     server: toolr.ca
     proxy: http://TESTFARM1
   nginx_ping:
-    location: '/health'
+    location: '/nginx-health'
     server: nginx01.toolr.ca
     proxy: http://NGINX
+    location_cfg_append:
+      stub_status: 
