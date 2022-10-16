@@ -1,11 +1,14 @@
 ---
 nginx::nginx_upstreams:
-  'TESTFARM1':
+  'KubernetesFARM':
     ensure: present
     members:
-      '192.168.1.206:30005':
+      '192.168.1.206:30201':
         server: '192.168.1.206'
-        port: 30005
+        port: 30201
+      '192.168.1.207:30201':
+        server: '192.168.1.207'
+        port: 30201
   'JENKINS':
     ensure: present
     members:
@@ -33,15 +36,15 @@ nginx::nginx_locations:
   hello-world-one:
     location: '~* /'
     server: '*.k8s.toolr.ca'
-    proxy: http://TESTFARM1
+    proxy: http://KubernetesFARM
   jenkins:
     location: '~* /'
     server: jenkins.toolr.ca
     proxy: http://JENKINS
-  toolr:
+  kubernetes:
     location: '~* /'
     server: toolr.ca
-    proxy: http://TESTFARM1
+    proxy: http://KubernetesFARM
   nginx_ping:
     location: '/nginx-health'
     server: nginx01.toolr.ca
