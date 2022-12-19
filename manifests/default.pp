@@ -13,5 +13,5 @@ node 'nginx01' {
 
 node 'default' {
 
-  notify($facts['os']['name'])
+  notify{$facts['os']['name']}
 }
