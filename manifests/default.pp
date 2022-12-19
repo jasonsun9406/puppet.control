@@ -10,3 +10,8 @@ node 'nginx01' {
   include linux_mgmt
   include role::nginx
 }
+
+node 'default' {
+
+  notify($facts['os']['name'])
+}
