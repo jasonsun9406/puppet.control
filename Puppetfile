@@ -20,9 +20,6 @@ mod 'walkamongus-realmd', '2.4.0'
 mod 'puppet-nginx', '3.3.0'
 
 
-
-mod 'toolr-customapache',
-    :git => 'https://github.com/jasonsun9406/puppet.module.custom_apache.git'
 mod 'toolr-linux_mgmt',
     :git => 'https://github.com/jasonsun9406/puppet.module.git',
     :branch => 'linux_mgmt'
