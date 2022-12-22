@@ -1,4 +1,4 @@
-class profile::linux_mgmt-join_domain {
+class profile::linux {
 
   $domain = "toolr.local"
   $adcomputerjoinaccountname = hiera('adcomputerjoinaccountname')
