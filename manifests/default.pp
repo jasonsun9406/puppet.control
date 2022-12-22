@@ -18,9 +18,8 @@ node 'nginx01' {
 node 'default' {
 
   $os = $facts['os']['name']
-  $test = hiera('jasonstring')
 
   if ($os == 'ubuntu'){
-    notify {"I am testing: $test":}
+    include role::linux
   }
 }
