@@ -1,4 +1,4 @@
 class role::linux {
-    include profile::linux
+    include profile::ubuntu
 
 }
