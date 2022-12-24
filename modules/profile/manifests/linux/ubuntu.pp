@@ -18,7 +18,7 @@ class profile::linux::ubuntu {
       },
       "domain/${domain}" => {
         'ad_domain'                      => "$domain",
-        'krb5_realm'                     => "upcase($domain)",
+        'krb5_realm'                     => "$domain",
         'realmd_tags'                    => 'manages-system joined-with-adcli',
         'cache_credentials'              => 'True',
         'id_provider'                    => 'ad',
