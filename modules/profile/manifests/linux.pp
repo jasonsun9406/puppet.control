@@ -16,7 +16,7 @@ class profile::linux {
         'config_file_version' => '2',
         'services'            => 'nss,pam',
       },
-      "domain/${::domain}" => {
+      "domain/${domain}" => {
         'ad_domain'                      => "$domain",
         'krb5_realm'                     => "upcase($domain)",
         'realmd_tags'                    => 'manages-system joined-with-adcli',
