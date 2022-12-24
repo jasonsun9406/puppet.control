@@ -5,7 +5,6 @@ class profile::linux::ubuntu {
   $adcomputerjoinaccountpassword = hiera('adcomputerjoinaccountpassword')
   $allowgroups = ['domain admins@toolr.local', 'sre admins@toolr.local']
   class { '::realmd':
-
     domain               => "$::domain",
     domain_join_user     => "$adcomputerjoinaccountname",
     domain_join_password => "$adcomputerjoinaccountpassword",
@@ -18,7 +17,7 @@ class profile::linux::ubuntu {
       },
       "domain/${::domain}" => {
         'ad_domain'                      => "$::domain",
-        'krb5_realm'                     => "upcase($::domain)",
+        'krb5_realm'                     => upcase($::domain),
         'realmd_tags'                    => 'manages-system joined-with-adcli',
         'cache_credentials'              => 'True',
         'id_provider'                    => 'ad',
@@ -33,7 +32,6 @@ class profile::linux::ubuntu {
         'sudo_provider' => 'ad',
       },
     }
-
   }
 
   class { 'sudo':
