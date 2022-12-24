@@ -35,7 +35,4 @@ class profile::ubuntu {
     }
   }
 
-  class { 'timezone':
-    timezone => 'America/Vancouver',
-  }
 }
