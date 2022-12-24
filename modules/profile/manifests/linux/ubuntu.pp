@@ -3,7 +3,7 @@ class profile::linux::ubuntu {
   $domain = "toolr.local"
   $adcomputerjoinaccountname = hiera('adcomputerjoinaccountname')
   $adcomputerjoinaccountpassword = hiera('adcomputerjoinaccountpassword')
-
+  $allowgroups = 'domain admins@toolr.local, sre admins@toolr.local'
   class { '::realmd':
 
     domain               => "$domain",
@@ -28,10 +28,23 @@ class profile::linux::ubuntu {
         'ldap_id_mapping'                => 'True',
         'fallback_homedir'               => '/home/%u',
         'access_provider' => 'simple',
-        'simple_allow_groups' => 'domain admins@toolr.local, sre admins@toolr.local',
+        'simple_allow_groups' => $allowgroups,
         'ldap_sasl_authid' => "$::hostname",
         'sudo_provider' => 'ad',
       },
+    }
+
+  }
+
+  class { 'sudo':
+    config_file_replace => false,
+  }
+
+  $allowgroups.each |Integer $index, String $value| {
+    $stringreplacedvalue = regsubst ($value,'\s','\\\\ ')
+    sudo::conf { "$index":
+      priority => 10,
+      content  => "%$stringreplacedvalue ALL=(ALL) NOPASSWD: ALL",
     }
   }
 
