@@ -20,6 +20,6 @@ node 'default' {
   $os = $facts['os']['name']
 
   if ($os == 'ubuntu'){
-    include role::linux
+    include role::linux::ubuntu
   }
 }
