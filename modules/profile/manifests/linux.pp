@@ -12,7 +12,7 @@ class profile::linux {
     manage_sssd_config => true,
     sssd_config        => {
       'sssd' => {
-        'domains'             => "$::domain",
+        'domains'             => "$domain",
         'config_file_version' => '2',
         'services'            => 'nss,pam',
       },
