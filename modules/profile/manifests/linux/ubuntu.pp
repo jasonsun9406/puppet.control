@@ -3,7 +3,7 @@ class profile::linux::ubuntu {
   $domain = "toolr.local"
   $adcomputerjoinaccountname = hiera('adcomputerjoinaccountname')
   $adcomputerjoinaccountpassword = hiera('adcomputerjoinaccountpassword')
-  $allowgroups = 'domain admins@toolr.local, sre admins@toolr.local'
+  $allowgroups = ['domain admins@toolr.local', 'sre admins@toolr.local']
   class { '::realmd':
 
     domain               => "$domain",
