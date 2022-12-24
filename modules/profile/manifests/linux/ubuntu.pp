@@ -28,7 +28,7 @@ class profile::linux::ubuntu {
         'ldap_id_mapping'                => 'True',
         'fallback_homedir'               => '/home/%u',
         'access_provider' => 'simple',
-        'simple_allow_groups' => 'Domain Admins, SRE Admins',
+        'simple_allow_groups' => 'domain admins@toolr.local, sre admins@toolr.local',
         'ldap_sasl_authid' => "$::hostname",
         'sudo_provider' => 'ad',
       },
