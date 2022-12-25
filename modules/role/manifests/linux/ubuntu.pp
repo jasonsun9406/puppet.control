@@ -5,3 +5,4 @@ class role::linux::ubuntu {
     include profile::linux::ubuntu
 
 }
+

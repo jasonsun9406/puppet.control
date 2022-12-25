@@ -26,10 +26,9 @@ class profile::linux::ubuntu {
         'default_shell'                  => '/bin/bash',
         'ldap_id_mapping'                => 'True',
         'fallback_homedir'               => '/home/%u',
-        'access_provider' => 'simple',
         'simple_allow_groups' => $allowgroups,
-        'ldap_sasl_authid' => "$::hostname",
         'sudo_provider' => 'ad',
+        'use_fully_qualified_names' => 'True',
       },
     }
   }
