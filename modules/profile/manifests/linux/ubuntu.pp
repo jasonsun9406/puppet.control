@@ -8,7 +8,7 @@ class profile::linux::ubuntu {
     domain               => "$::domain",
     domain_join_user     => "$adcomputerjoinaccountname",
     domain_join_password => "$adcomputerjoinaccountpassword",
-    computer_name        => upcase($::domain),
+    computer_name        => upcase($::hostname),
     manage_sssd_config => true,
     sssd_config        => {
       'sssd' => {
