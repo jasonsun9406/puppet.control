@@ -22,4 +22,4 @@ mod 'saz-resolv_conf', '5.0.0'
 
 mod 'toolr-linux_mgmt',
     :git => 'https://github.com/jasonsun9406/puppet.module.git',
-    :branch => 'linux_mgmt'
+    :tag => 'linux_mgmt-v1.0.0'
