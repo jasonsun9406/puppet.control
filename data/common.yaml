@@ -1,0 +1,6 @@
+domainspecific::linuxsudousers:
+  - 'domain admins@iqdca.local'
+  - 'sre admins@iqdca.local'
+lookup_options:
+  domainspecific::linuxsudousers:
+    convert_to: "Array"
