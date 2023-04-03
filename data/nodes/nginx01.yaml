@@ -30,7 +30,7 @@ nginx::nginx_upstreams:
   'HIYO':
     ensure: present
     members:
-      '192.168.1.206:30201':
+      'anothertest':
         server: '192.168.1.206'
         port: 30201
 
