@@ -27,7 +27,16 @@ nginx::nginx_upstreams:
       'localhost:80':
         server: 'localhost'
         port: 80
-
+  'HIYOFARM':
+    ensure: present
+    members:
+      '192.168.1.206:30000':
+        server: '192.168.1.206'
+        port: 30000
+      '192.168.1.207:30000':
+        server: '192.168.1.207'
+        port: 30000
+        
 nginx::nginx_servers:
   'toolr.ca':
     listen_port: 80
