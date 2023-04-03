@@ -15,12 +15,24 @@ nginx::nginx_upstreams:
       '192.168.1.201:8080':
         server: '192.168.1.201'
         port: 8080
+  'VAULT':
+    ensure: present
+    members:
+      '192.168.1.215:8200':
+        server: '192.168.1.215'
+        port: 8200
   'NGINX':
     ensure: present
     members:
       'localhost:80':
         server: 'localhost'
         port: 80
+  'HIYO':
+    ensure: present
+    members:
+      '192.168.1.206:30201':
+        server: '192.168.1.206'
+        port: 30201
 
 nginx::nginx_servers:
   'toolr.ca':
@@ -31,6 +43,10 @@ nginx::nginx_servers:
     listen_port: 80
   nginx01.toolr.ca:
     listen_port: 80
+  vault.toolr.ca:
+    listen_port: 80
+  hiyo.app:
+    listen_port: 443
 
 nginx::nginx_locations:
   hello-world-one:
@@ -41,6 +57,10 @@ nginx::nginx_locations:
     location: '~* /'
     server: jenkins.toolr.ca
     proxy: http://JENKINS
+  vault:
+    location: '~* /'
+    server: vault.toolr.ca
+    proxy: http://VAULT
   kubernetes:
     location: '~* /'
     server: toolr.ca
@@ -52,3 +72,7 @@ nginx::nginx_locations:
     location_cfg_append:
       add_header: '"Content-Type" "application/json"'
       return: '200 "healthy"'
+  hiyo:
+    location: '~* /'
+    server: hiyo.app
+    proxy: https://JENKINS
