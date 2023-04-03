@@ -36,7 +36,7 @@ nginx::nginx_upstreams:
       '192.168.1.207:30000':
         server: '192.168.1.207'
         port: 30000
-        
+
 nginx::nginx_servers:
   'toolr.ca':
     listen_port: 80
@@ -83,4 +83,4 @@ nginx::nginx_locations:
     location: '~* /'
     ssl_only: true
     server: hiyo.app
-    proxy: https://KubernetesFARM
+    proxy: https://HIYOFARM
