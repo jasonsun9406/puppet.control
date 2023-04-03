@@ -27,12 +27,6 @@ nginx::nginx_upstreams:
       'localhost:80':
         server: 'localhost'
         port: 80
-  'HIYO':
-    ensure: present
-    members:
-      'anothertest':
-        server: '192.168.1.206'
-        port: 30201
 
 nginx::nginx_servers:
   'toolr.ca':
@@ -80,4 +74,4 @@ nginx::nginx_locations:
     location: '~* /'
     ssl_only: true
     server: hiyo.app
-    proxy: https://JENKINS
+    proxy: https://KubernetesFARM
