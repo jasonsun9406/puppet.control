@@ -83,4 +83,4 @@ nginx::nginx_locations:
     location: '~* /'
     ssl_only: true
     server: hiyo.app
-    proxy: https://HIYOFARM
+    proxy: http://HIYOFARM
