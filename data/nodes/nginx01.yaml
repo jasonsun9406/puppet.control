@@ -57,7 +57,6 @@ nginx::nginx_servers:
   toolr.vertexcloudplatform.com:
     listen_port: 443
     ssl: true
-    ssl_only: true
     ssl_cert: '/etc/letsencrypt/live/vertexcloudplatform.com/fullchain.pem'
     ssl_key: '/etc/letsencrypt/live/vertexcloudplatform.com/privkey.pem'
     ssl_protocols: 'TLSv1.2'
