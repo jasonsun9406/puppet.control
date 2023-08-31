@@ -54,6 +54,12 @@ nginx::nginx_servers:
     ssl_cert: '/etc/nginx/ssl/hiyoapp.crt'
     ssl_key: '/etc/nginx/ssl/hiyoapp.key'
     ssl_protocols: 'TLSv1.2'
+  toolr.vertexcloudplatform.com:
+    listen_port: 443
+    ssl: true
+    ssl_cert: '/etc/letsencrypt/live/vertexcloudplatform.com/fullchain.pem'
+    ssl_key: '/etc/letsencrypt/live/vertexcloudplatform.com/privkey.pem'
+    ssl_protocols: 'TLSv1.2'
 
 nginx::nginx_locations:
   hello-world-one:
@@ -84,3 +90,7 @@ nginx::nginx_locations:
     ssl_only: true
     server: hiyo.app
     proxy: http://HIYOFARM
+  toolr-vertexcloudplatform:
+    location: '~* /'
+    server: toolr.vertexcloudplatform.com
+    proxy: http://KubernetesFARM
