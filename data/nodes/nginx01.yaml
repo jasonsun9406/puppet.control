@@ -92,5 +92,6 @@ nginx::nginx_locations:
     proxy: http://HIYOFARM
   toolr-vertexcloudplatform:
     location: '~* /'
+    ssl_only: true
     server: toolr.vertexcloudplatform.com
     proxy: http://KubernetesFARM
