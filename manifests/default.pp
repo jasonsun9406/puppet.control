@@ -5,8 +5,12 @@ node 'ansible-agent01' {
 
 }
 
-node 'win-9kfma7hmroh' {
-
+node 'win-miha0ugrs92' {
+  package { 'Az':
+    ensure => '11.2.0',
+    source => 'PSGallery',
+    provider => 'windowspowershell'
+  }
 }
 
 
