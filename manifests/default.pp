@@ -13,7 +13,8 @@ node 'win-miha0ugrs92' {
   package { 'Az':
     ensure => '11.2.0',
     source => 'PSGallery',
-    provider => 'windowspowershell'
+    provider => 'windowspowershell',
+    command => '-allowclobber'
   }
 }
 
