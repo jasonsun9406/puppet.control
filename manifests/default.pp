@@ -14,7 +14,7 @@ node 'win-miha0ugrs92' {
     ensure => '11.2.0',
     source => 'PSGallery',
     provider => 'windowspowershell',
-    command => '-allowclobber'
+    install_options  => ['-AllowClobber']
   }
 }
 
