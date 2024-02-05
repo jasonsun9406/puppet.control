@@ -20,7 +20,7 @@ mod 'walkamongus-realmd', '2.4.0'
 mod 'puppet-nginx', '3.3.0'
 mod 'saz-resolv_conf', '5.0.0'
 mod 'puppetlabs-pwshlib', '1.0.1'
-mod 'hbuckle-powershellmodule', '2.0.1'
+mod 'encore-powershellmodule', '2.2.1'
 
 mod 'toolr-linux_mgmt',
     :git => 'https://github.com/jasonsun9406/puppet.module.git',
