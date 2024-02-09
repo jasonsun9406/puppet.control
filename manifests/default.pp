@@ -15,6 +15,11 @@ node 'win-miha0ugrs92' {
     provider => 'windowspowershell',
     install_options  => ['-AllowClobber']
   }
+  package { 'powershell-yaml':
+    ensure => '0.4.7',
+    source => 'PSGallery',
+    provider => 'windowspowershell'
+  }
 }
 
 
